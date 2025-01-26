@@ -3,7 +3,6 @@ import { globalStyles } from './global-styles.js';
 
 export class IntroComponent extends LitElement {
   static styles = [globalStyles, css`
-    * Intro  */
 
 .intro {
 	background-color: #fff;
@@ -11,8 +10,6 @@ export class IntroComponent extends LitElement {
 	display: flex;
 	
 }
-
-
 
 .intro .wrapper{
 	flex-direction: column;
@@ -47,7 +44,6 @@ export class IntroComponent extends LitElement {
 
     @media only screen and (min-width: 920px) {
 
-    /* Intro  */
 
 	.intro .wrapper{
 		flex-direction: row;
