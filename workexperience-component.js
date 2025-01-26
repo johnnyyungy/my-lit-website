@@ -37,16 +37,6 @@ export class WorkExperienceComponent extends LitElement {
             <p>Customer accounts advisor dealing with a wide range of customer account queries. Daily duties include correctly advising customers on settlements of bets, balance histories, and login problems. Main duties include accurately guiding and educating customers with their queries while strictly complying with company policy and procedures.</p>
           </aside>
 
-          <!-- Toggle Button -->
-          <button
-            class="more_button"
-            @click="${this.toggleJobs}"
-            aria-expanded="${this.showJobs}"
-            aria-controls="more_jobs"
-          >
-            ${this.showJobs ? 'Less ^' : 'More >'}
-          </button>
-
           <!-- More Jobs Section -->
           <div
             id="more_jobs"
@@ -63,6 +53,16 @@ export class WorkExperienceComponent extends LitElement {
               <p>Part of the management team responsible for motivating, leading, and developing a team of 26 individuals. Duties include people management, including shift planning, managing annual leave, conducting return-to-work interviews, and managing behavior, attendance, and sickness. Mainly responsible for millions of pounds of physical cash from a multitude of retailers and bank branches and ensuring the cash center operates maximally to meet bank deadlines and comply with complex banking procedures. Other duties include managing and monitoring KPIs, thus being responsible for driving team performance and managing the team to work to its full potential. Recognizing and rewarding excellent performance through quarterly reviews and managing the annual performance bonus budget, implementing and enforcing changes to processing procedures.</p>
             </aside>
           </div>
+
+          <!-- Toggle Button -->
+          <button
+            class="more_button"
+            @click="${this.toggleJobs}"
+            aria-expanded="${this.showJobs}"
+            aria-controls="more_jobs"
+          >
+            ${this.showJobs ? 'Less ^' : 'More >'}
+          </button>
         </div>
       </section>
     `;
