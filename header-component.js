@@ -96,14 +96,21 @@ export class HeaderComponent extends LitElement {
   handleNavigation(event) {
     event.preventDefault(); // Prevent default anchor behavior
     const targetId = event.target.getAttribute('href').substring(1); // Get the target section ID
-    const targetElement = document.getElementById(targetId); // Find the target element
 
     // Close the mobile nav menu after clicking a link
     this.showNav = false;
     this.requestUpdate();
 
-    if (targetElement) {
-      targetElement.scrollIntoView({ behavior: 'smooth' }); // Smooth scroll to the target
+    // Find the main app component (my-app)
+    const appElement = document.querySelector('my-app');
+
+    if (appElement) {
+      // Query the shadow root of the app element to find the target section
+      const targetElement = appElement.shadowRoot.getElementById(targetId);
+
+      if (targetElement) {
+        targetElement.scrollIntoView({ behavior: 'smooth' }); // Smooth scroll to the target
+      }
     }
   }
 
