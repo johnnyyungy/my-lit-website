@@ -1,7 +1,8 @@
 import { LitElement, html, css } from 'https://cdn.jsdelivr.net/npm/lit@3.2.1/+esm';
+import { globalStyles } from './global-styles.js';
 
 export class QuoteComponent extends LitElement {
-  static styles = css`
+  static styles = [globalStyles, css`
     :host {
       display: block;
       background-color: #333;
@@ -34,7 +35,7 @@ export class QuoteComponent extends LitElement {
         font-size: 18px;
       }
     }
-  `;
+  `];
 
   render() {
     return html`
