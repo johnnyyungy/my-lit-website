@@ -9,6 +9,15 @@ export class IntroComponent extends LitElement {
       display: flex;
     }
 
+    .intro .wrapper .photo{
+	background-size: cover;
+	margin-top: 30px;
+    }
+
+    .intro-social {
+	font-size: 18px; 
+    }
+
     .wrapper {
       margin: 0 auto;
       max-width: 1200px;
