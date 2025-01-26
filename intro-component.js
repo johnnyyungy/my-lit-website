@@ -14,6 +14,10 @@ export class IntroComponent extends LitElement {
 	margin-top: 30px;
     }
 
+    .intro .wrapper aside {
+	flex-grow: 1;
+    }
+
     .intro-social {
 	font-size: 18px; 
     }
