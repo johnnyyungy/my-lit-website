@@ -10,6 +10,10 @@ export class InterestsComponent extends LitElement {
       padding: 20px;
     }
 
+    .interests {
+    scroll-margin-top: 100px;
+    }
+
     .wrapper {
       display: flex;
       flex-direction: column;

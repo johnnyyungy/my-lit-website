@@ -9,6 +9,10 @@ export class EducationComponent extends LitElement {
       padding: 40px 20px;
     }
 
+    .education {
+    scroll-margin-top: 100px;
+    }
+
     .wrapper {
       max-width: 1200px;
       margin: 0 auto;

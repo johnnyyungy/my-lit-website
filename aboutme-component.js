@@ -4,6 +4,7 @@ import { globalStyles } from './global-styles.js';
 export class AboutMeComponent extends LitElement {
   static styles = [globalStyles, css`
     .aboutme {
+    scroll-margin-top: 100px; /* Add this line */
       min-height: 400px;
       display: flex;
     }
