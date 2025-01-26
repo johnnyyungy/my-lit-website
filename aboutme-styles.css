@@ -3,61 +3,109 @@
     scroll-margin-top: 100px;
     min-height: 400px;
     display: flex;
-    background-color: #f0f8ff; /* Light blue background for the section */
-    border: 2px solid #4682b4; /* Steel blue border */
+    background-color: #f9f9f9; /* Light gray background for the section */
     border-radius: 10px; /* Rounded corners */
-    padding: 20px; /* Add some padding */
-  }
-  
-  .wrapper {
+    padding: 40px 20px; /* Add some padding */
+    margin: 20px 0; /* Add margin for spacing */
+}
+
+.wrapper {
     margin: 0 auto;
     max-width: 1200px;
     padding: 20px;
     display: flex;
     flex-direction: column;
     background-color: #ffffff; /* White background for the wrapper */
-    border: 1px solid #d3d3d3; /* Light gray border */
-    border-radius: 8px; /* Rounded corners */
-  }
-  
-  .me {
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.wrapper:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Stronger shadow on hover */
+}
+
+.me {
     margin-right: 50px;
-    color: #2e8b57; /* Sea green text color */
-  }
-  
-  .me h2 {
-    color: #4682b4; /* Steel blue heading color */
-  }
-  
-  aside {
-    background-color: #e6f7ff; /* Light cyan background for the aside */
-    padding: 15px; /* Add some padding */
-    border: 1px solid #87ceeb; /* Sky blue border */
-    border-radius: 8px; /* Rounded corners */
-  }
-  
-  aside h2 {
-    color: #4682b4; /* Steel blue heading color */
-  }
-  
-  aside ul {
-    margin: 0px 0px 0px 20px;
-    padding: 0px;
-    line-height: 22px;
-    color: #2e8b57; /* Sea green text color */
-  }
-  
-  aside ul li {
-    margin: 0px 0px 10px 0px;
-  }
-  
-  @media only screen and (min-width: 920px) {
+    color: #333; /* Dark gray text color */
+}
+
+.me h2 {
+    font-size: 32px;
+    color: #333; /* Dark gray heading color */
+    text-align: center;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.me h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: #ff6f61; /* Coral color for the underline */
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+.me p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #555; /* Medium gray text color */
+    margin: 0 0 20px;
+}
+
+aside {
+    background-color: #fff; /* White background for the aside */
+    padding: 20px; /* Add some padding */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+aside:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Stronger shadow on hover */
+}
+
+aside h2 {
+    font-size: 24px;
+    color: #333; /* Dark gray heading color */
+    margin-bottom: 20px;
+    position: relative;
+}
+
+aside h2::after {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 4px;
+    background-color: #ff6f61; /* Coral color for the underline */
+    margin: 10px 0 0;
+    border-radius: 2px;
+}
+
+aside ul {
+    margin: 0 0 0 20px;
+    padding: 0;
+    line-height: 1.6;
+    color: #555; /* Medium gray text color */
+}
+
+aside ul li {
+    margin: 0 0 10px 0;
+    font-size: 16px;
+}
+
+@media only screen and (min-width: 920px) {
     .wrapper {
-      flex-direction: row;
+        flex-direction: row;
+        gap: 40px; /* Add gap between columns */
     }
-  
+
     .aboutme aside {
-      min-width: 30%;
-      padding-top: 0px;
+        min-width: 30%;
+        padding-top: 0;
     }
-  }
+}
