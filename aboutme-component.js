@@ -45,6 +45,7 @@ export class AboutMeComponent extends LitElement {
 
   render() {
     return html`
+      <link rel="stylesheet" href="./styles.css">
       <section class="aboutme" id="aboutme">
         <div class="wrapper">
           <div class="me">
