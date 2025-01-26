@@ -1,9 +1,13 @@
-// global-styles.js
 import { css } from 'https://cdn.jsdelivr.net/npm/lit@3.2.1/+esm';
 
 export const globalStyles = css`
   * {
     box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px; /* Add this line to account for the fixed header */
   }
 
   body {
