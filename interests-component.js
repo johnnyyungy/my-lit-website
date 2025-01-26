@@ -1,7 +1,8 @@
 import { LitElement, html, css } from 'https://cdn.jsdelivr.net/npm/lit@3.2.1/+esm';
+import { globalStyles } from './global-styles.js';
 
 export class InterestsComponent extends LitElement {
-  static styles = css`
+  static styles = [globalStyles, css`
     :host {
       display: block;
       margin: 0 auto;
@@ -92,7 +93,7 @@ export class InterestsComponent extends LitElement {
     .active, .dot:hover {
       background-color: #717171;
     }
-  `;
+  `];
 
   static properties = {
     slideIndex: { type: Number },
