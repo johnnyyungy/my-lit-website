@@ -1,103 +1,8 @@
-import { LitElement, html, css } from 'https://cdn.jsdelivr.net/npm/lit@3.2.1/+esm';
+import { LitElement, html } from 'https://cdn.jsdelivr.net/npm/lit@3.2.1/+esm';
 import { globalStyles } from './global-styles.js';
 
 export class InterestsComponent extends LitElement {
-  static styles = [globalStyles, css`
-    :host {
-      display: block;
-      margin: 0 auto;
-      max-width: 1200px;
-      padding: 20px;
-    }
-
-    .interests {
-    scroll-margin-top: 100px;
-    }
-
-    .wrapper {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-    }
-
-    .photo {
-      margin-top: 20px;
-    }
-
-    img {
-      width: 100%;
-      height: auto;
-      border-radius: 8px;
-    }
-
-    a {
-      color: black;
-      font-weight: bold;
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
-    @media (max-width: 768px) {
-      .wrapper {
-        flex-direction: column;
-      }
-    }
-
-    .slideshow-container {
-      position: relative;
-    }
-
-    .mySlides {
-      display: none;
-    }
-
-    .prev, .next {
-      cursor: pointer;
-      position: absolute;
-      top: 50%;
-      width: auto;
-      padding: 16px;
-      margin-top: -22px;
-      color: white;
-      font-weight: bold;
-      font-size: 18px;
-      transition: 0.6s ease;
-      border-radius: 0 3px 3px 0;
-      user-select: none;
-    }
-
-    .next {
-      right: 0;
-      border-radius: 3px 0 0 3px;
-    }
-
-    .prev:hover, .next:hover {
-      background-color: rgba(0, 0, 0, 0.8);
-    }
-
-    .dots {
-      text-align: center;
-      margin-top: 10px;
-    }
-
-    .dot {
-      cursor: pointer;
-      height: 15px;
-      width: 15px;
-      margin: 0 2px;
-      background-color: #bbb;
-      border-radius: 50%;
-      display: inline-block;
-      transition: background-color 0.6s ease;
-    }
-
-    .active, .dot:hover {
-      background-color: #717171;
-    }
-  `];
+  static styles = [globalStyles];
 
   static properties = {
     slideIndex: { type: Number },
@@ -136,6 +41,8 @@ export class InterestsComponent extends LitElement {
 
   render() {
     return html`
+      <link rel="stylesheet" href="./interests-styles.css">
+      <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
       <section class="interests" id="interests">
         <div class="wrapper">
           <div>
