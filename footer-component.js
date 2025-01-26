@@ -1,7 +1,8 @@
 import { LitElement, html, css } from 'https://cdn.jsdelivr.net/npm/lit@3.2.1/+esm';
+import { globalStyles } from './global-styles.js';
 
 export class FooterComponent extends LitElement {
-  static styles = css`
+  static styles = [globalStyles, css`
     :host {
       display: block;
       position: fixed;
@@ -14,11 +15,11 @@ export class FooterComponent extends LitElement {
     }
 
     .socialmedia {
-  padding: 14px 0 10px;
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-}
+      padding: 14px 0 10px;
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+    }
 
     .socialmedia a {
       display: inline-block;
@@ -32,7 +33,7 @@ export class FooterComponent extends LitElement {
       background-color: black;
       color: white;
     }
-  `;
+  `];
 
   render() {
     return html`
