@@ -2,10 +2,21 @@ import { LitElement, html, css } from 'https://cdn.jsdelivr.net/npm/lit@3.2.1/+e
 
 export class AboutMeComponent extends LitElement {
   static styles = css`
-    /* Add your CSS here */
+    :host {
+      display: block;
+    }
+
     .aboutme {
       min-height: 400px;
       display: flex;
+      flex-direction: column; /* Ensure flex works as expected */
+      padding: 20px; /* Add padding for better spacing */
+    }
+
+    .aboutme .wrapper {
+      display: flex;
+      flex-direction: column; /* Stack children vertically */
+      gap: 20px; /* Add spacing between children */
     }
 
     .aboutme aside {
@@ -20,6 +31,16 @@ export class AboutMeComponent extends LitElement {
 
     .aboutme aside ul li {
       margin: 0px 0px 10px 0px;
+    }
+
+    /* Add styles for the "me" section */
+    .aboutme .me {
+      flex: 1; /* Allow this section to grow */
+    }
+
+    /* Add styles for the "aside" section */
+    .aboutme aside {
+      flex: 1; /* Allow this section to grow */
     }
   `;
 

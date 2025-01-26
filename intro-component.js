@@ -2,7 +2,10 @@ import { LitElement, html, css } from 'https://cdn.jsdelivr.net/npm/lit@3.2.1/+e
 
 export class IntroComponent extends LitElement {
   static styles = css`
-    /* Add your CSS here */
+    :host {
+      display: block;
+    }
+
     .intro {
       background-color: #fff;
       min-height: 400px;

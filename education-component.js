@@ -2,14 +2,19 @@ import { LitElement, html, css } from 'https://cdn.jsdelivr.net/npm/lit@3.2.1/+e
 
 export class EducationComponent extends LitElement {
   static styles = css`
-    /* Add your CSS here */
+    :host {
+      display: block;
+    }
+
     .education {
       background-color: #fff;
+      padding: 20px; /* Add padding for better spacing */
     }
 
     .education .wrapper {
       display: flex;
       flex-direction: column;
+      gap: 20px; /* Add spacing between children */
     }
 
     .education aside {

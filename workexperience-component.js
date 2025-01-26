@@ -2,44 +2,92 @@ import { LitElement, html, css } from 'https://cdn.jsdelivr.net/npm/lit@3.2.1/+e
 
 export class WorkExperienceComponent extends LitElement {
   static styles = css`
-    /* Add your CSS here */
+    :host {
+      display: block;
+    }
+
     .workexperience .wrapper {
-      flex-direction: column;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
     }
 
     .workexperience aside {
       border-bottom: 1px solid #000;
-      margin: 0px 0px 30px;
-      padding: 0px 0px 10px;
+      margin: 0 0 30px;
+      padding: 0 0 20px;
+    }
+
+    .workexperience h2 {
+      font-size: 32px;
+      margin-bottom: 20px;
+    }
+
+    .workexperience h3 {
+      font-size: 24px;
+      margin: 0 0 10px;
+    }
+
+    .workexperience h4 {
+      font-size: 18px;
+      color: #555;
+      margin: 0 0 15px;
+    }
+
+    .workexperience p {
+      font-size: 16px;
+      line-height: 1.6;
+      margin: 0;
     }
 
     .more_button {
-      padding: 10px;
+      padding: 10px 20px;
       background-color: #333;
-      width: 60px;
-      font-size: 12px;
       color: white;
+      font-size: 14px;
       text-align: center;
+      cursor: pointer;
+      border: none;
+      border-radius: 4px;
+      transition: background-color 0.3s ease;
     }
 
     .more_button:hover {
-      cursor: pointer;
       background-color: #222;
-      color: white;
     }
 
     .more_jobs {
       display: none;
+      transition: opacity 0.3s ease;
     }
 
-    .showJobs + .more_jobs {
+    .more_jobs.visible {
       display: block;
+      opacity: 1;
     }
 
-    .showJobs {
-      display: none;
+    @media (max-width: 768px) {
+      .workexperience h2 {
+        font-size: 28px;
+      }
+
+      .workexperience h3 {
+        font-size: 22px;
+      }
+
+      .workexperience h4 {
+        font-size: 16px;
+      }
+
+      .workexperience p {
+        font-size: 14px;
+      }
     }
   `;
+
+  static properties = {
+    showJobs: { type: Boolean },
+  };
 
   constructor() {
     super();
@@ -48,7 +96,16 @@ export class WorkExperienceComponent extends LitElement {
 
   toggleJobs() {
     this.showJobs = !this.showJobs;
-    this.requestUpdate();
+    this.scrollToBottom();
+  }
+
+  scrollToBottom() {
+    if (this.showJobs) {
+      setTimeout(() => {
+        const moreJobsSection = this.shadowRoot.querySelector('.more_jobs');
+        moreJobsSection.scrollIntoView({ behavior: 'smooth' });
+      }, 100);
+    }
   }
 
   render() {
@@ -71,8 +128,14 @@ export class WorkExperienceComponent extends LitElement {
             <h4>2016 to 2017</h4>
             <p>Customer accounts advisor dealing with a wide range of customer account queries. Daily duties include correctly advising customers on settlements of bets, balance histories, and login problems. Main duties include accurately guiding and educating customers with their queries while strictly complying with company policy and procedures.</p>
           </aside>
-          <div class="more_button" @click="${this.toggleJobs}">More &gt;</div>
-          <div class="more_jobs ${this.showJobs ? 'showJobs' : ''}">
+          <button
+            class="more_button"
+            @click="${this.toggleJobs}"
+            aria-expanded="${this.showJobs}"
+          >
+            ${this.showJobs ? 'Less ^' : 'More >'}
+          </button>
+          <div class="more_jobs ${this.showJobs ? 'visible' : ''}">
             <aside>
               <h3>CSI/RECON Production Supervisor - Vaultex UK LTD</h3>
               <h4>2013 – 2016</h4>
@@ -83,7 +146,6 @@ export class WorkExperienceComponent extends LitElement {
               <h4>2012 - 2013</h4>
               <p>Part of the management team responsible for motivating, leading, and developing a team of 26 individuals. Duties include people management, including shift planning, managing annual leave, conducting return-to-work interviews, and managing behavior, attendance, and sickness. Mainly responsible for millions of pounds of physical cash from a multitude of retailers and bank branches and ensuring the cash center operates maximally to meet bank deadlines and comply with complex banking procedures. Other duties include managing and monitoring KPIs, thus being responsible for driving team performance and managing the team to work to its full potential. Recognizing and rewarding excellent performance through quarterly reviews and managing the annual performance bonus budget, implementing and enforcing changes to processing procedures.</p>
             </aside>
-            <div class="more_button" @click="${this.toggleJobs}">Less ^</div>
           </div>
         </div>
       </section>

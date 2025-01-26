@@ -2,21 +2,26 @@ import { LitElement, html, css } from 'https://cdn.jsdelivr.net/npm/lit@3.2.1/+e
 
 export class InterestsComponent extends LitElement {
   static styles = css`
-    /* Add your CSS here */
+    :host {
+      display: block;
+    }
+
     .interests .wrapper {
       display: flex;
       flex-direction: column;
-      margin: 0px auto;
+      margin: 0 auto;
+      max-width: 1200px;
+      padding: 20px;
     }
 
     .interests .wrapper .photo {
-      min-width: 45%;
-      min-height: 300px;
       margin-top: 30px;
     }
 
     .interests .wrapper .photo img {
       width: 100%;
+      height: auto;
+      border-radius: 8px;
     }
 
     .interests a {
@@ -31,8 +36,8 @@ export class InterestsComponent extends LitElement {
 
     /* Slideshow styles */
     .slideshow-container {
-      max-width: 1000px;
       position: relative;
+      max-width: 1000px;
       margin: auto;
     }
 
@@ -47,12 +52,13 @@ export class InterestsComponent extends LitElement {
       width: auto;
       margin-top: -22px;
       padding: 16px;
-      color: white !important;
+      color: white;
       font-weight: bold;
       font-size: 18px;
-      transition: 0.6s ease;
+      transition: 0.3s ease;
       border-radius: 0 3px 3px 0;
       user-select: none;
+      background-color: rgba(0, 0, 0, 0.5);
     }
 
     .next {
@@ -62,7 +68,6 @@ export class InterestsComponent extends LitElement {
 
     .prev:hover, .next:hover {
       background-color: rgba(0, 0, 0, 0.8);
-      text-decoration: none !important;
     }
 
     .text {
@@ -73,6 +78,7 @@ export class InterestsComponent extends LitElement {
       bottom: 8px;
       width: 100%;
       text-align: center;
+      background-color: rgba(0, 0, 0, 0.5);
     }
 
     .numbertext {
@@ -81,17 +87,23 @@ export class InterestsComponent extends LitElement {
       padding: 8px 12px;
       position: absolute;
       top: 0;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .dots {
+      text-align: center;
+      margin-top: 10px;
     }
 
     .dot {
       cursor: pointer;
       height: 15px;
       width: 15px;
-      margin: 0 2px;
+      margin: 0 5px;
       background-color: #bbb;
       border-radius: 50%;
       display: inline-block;
-      transition: background-color 0.6s ease;
+      transition: background-color 0.3s ease;
     }
 
     .active, .dot:hover {
@@ -104,18 +116,24 @@ export class InterestsComponent extends LitElement {
     }
 
     @keyframes fade {
-      from { opacity: .4; }
+      from { opacity: 0.4; }
       to { opacity: 1; }
     }
   `;
 
   static properties = {
     slideIndex: { type: Number },
+    slides: { type: Array },
   };
 
   constructor() {
     super();
     this.slideIndex = 1;
+    this.slides = [
+      { src: 'muay_thai.jpg', alt: 'Muay Thai', caption: 'Muay Thai', number: '1 / 3' },
+      { src: 'toys.jpg', alt: 'Power Rangers Collection', caption: 'Power Rangers Collection', number: '2 / 3' },
+      { src: 'japan.jpg', alt: 'Kyoto, Japan', caption: 'Kyoto, Japan', number: '3 / 3' },
+    ];
   }
 
   firstUpdated() {
@@ -134,12 +152,8 @@ export class InterestsComponent extends LitElement {
     const slides = this.shadowRoot.querySelectorAll('.mySlides');
     const dots = this.shadowRoot.querySelectorAll('.dot');
 
-    if (n > slides.length) {
-      this.slideIndex = 1;
-    }
-    if (n < 1) {
-      this.slideIndex = slides.length;
-    }
+    if (n > slides.length) this.slideIndex = 1;
+    if (n < 1) this.slideIndex = slides.length;
 
     slides.forEach((slide) => (slide.style.display = 'none'));
     dots.forEach((dot) => dot.classList.remove('active'));
@@ -163,36 +177,26 @@ export class InterestsComponent extends LitElement {
           <!-- Carousel Section -->
           <div class="photo">
             <div class="slideshow-container">
-              <!-- Full-width images with number and caption text -->
-              <div class="mySlides fade">
-                <div class="numbertext">1 / 3</div>
-                <img src="muay_thai.jpg" style="width:100%" alt="Muay Thai">
-                <div class="text">Muay Thai</div>
-              </div>
-
-              <div class="mySlides fade">
-                <div class="numbertext">2 / 3</div>
-                <img src="toys.jpg" style="width:100%" alt="Power Rangers Collection">
-                <div class="text">Power Rangers Collection</div>
-              </div>
-
-              <div class="mySlides fade">
-                <div class="numbertext">3 / 3</div>
-                <img src="japan.jpg" style="width:100%" alt="Kyoto, Japan">
-                <div class="text">Kyoto, Japan</div>
-              </div>
-
-              <!-- Next and previous buttons -->
-              <a class="prev" @click=${() => this.plusSlides(-1)}>&#10094;</a>
-              <a class="next" @click=${() => this.plusSlides(1)}>&#10095;</a>
+              ${this.slides.map(
+                (slide, index) => html`
+                  <div class="mySlides fade">
+                    <div class="numbertext">${slide.number}</div>
+                    <img src="${slide.src}" alt="${slide.alt}" style="width:100%">
+                    <div class="text">${slide.caption}</div>
+                  </div>
+                `
+              )}
+              <!-- Navigation buttons -->
+              <a class="prev" @click=${() => this.plusSlides(-1)} aria-label="Previous slide">&#10094;</a>
+              <a class="next" @click=${() => this.plusSlides(1)} aria-label="Next slide">&#10095;</a>
             </div>
-            <br>
-
-            <!-- The dots/circles -->
-            <div style="text-align:center">
-              <span class="dot" @click=${() => this.currentSlide(1)}></span>
-              <span class="dot" @click=${() => this.currentSlide(2)}></span>
-              <span class="dot" @click=${() => this.currentSlide(3)}></span>
+            <!-- Dots -->
+            <div class="dots">
+              ${this.slides.map(
+                (_, index) => html`
+                  <span class="dot" @click=${() => this.currentSlide(index + 1)} aria-label="Slide ${index + 1}"></span>
+                `
+              )}
             </div>
           </div>
         </div>
