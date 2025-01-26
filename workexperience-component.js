@@ -1,46 +1,8 @@
-import { LitElement, html, css } from 'https://cdn.jsdelivr.net/npm/lit@3.2.1/+esm';
+import { LitElement, html } from 'https://cdn.jsdelivr.net/npm/lit@3.2.1/+esm';
 import { globalStyles } from './global-styles.js';
+import { classMap } from 'https://cdn.jsdelivr.net/npm/lit@3.2.1/directives/class-map.js';
 
 export class WorkExperienceComponent extends LitElement {
-  static styles = [globalStyles, css`
-    :host {
-      display: block;
-      margin: 0 auto;
-      max-width: 1200px;
-      padding: 20px;
-    }
-
-    .workexperience aside {
-      border-bottom: 1px solid #000;
-      margin: 0 0 30px;
-      padding: 0 0 20px;
-    }
-
-    .more_button {
-      padding: 10px 20px;
-      background-color: #333;
-      color: white;
-      font-size: 14px;
-      text-align: center;
-      cursor: pointer;
-      border: none;
-      border-radius: 4px;
-      transition: background-color 0.3s ease;
-    }
-
-    .more_button:hover {
-      background-color: #222;
-    }
-
-    .more_jobs {
-      display: none;
-    }
-
-    .more_jobs.visible {
-      display: block;
-    }
-  `];
-
   static properties = {
     showJobs: { type: Boolean },
   };
@@ -56,6 +18,9 @@ export class WorkExperienceComponent extends LitElement {
 
   render() {
     return html`
+      <!-- Link the external CSS file -->
+      <link rel="stylesheet" href="./workexperience-styles.css">
+
       <section class="workexperience" id="work">
         <div class="wrapper">
           <h2>Work Experience</h2>
@@ -78,10 +43,14 @@ export class WorkExperienceComponent extends LitElement {
             class="more_button"
             @click="${this.toggleJobs}"
             aria-expanded="${this.showJobs}"
+            aria-controls="more_jobs"
           >
             ${this.showJobs ? 'Less ^' : 'More >'}
           </button>
-          <div class="more_jobs ${this.showJobs ? 'visible' : ''}">
+          <div
+            id="more_jobs"
+            class="more_jobs ${classMap({ visible: this.showJobs })}"
+          >
             <aside>
               <h3>CSI/RECON Production Supervisor - Vaultex UK LTD</h3>
               <h4>2013 – 2016</h4>

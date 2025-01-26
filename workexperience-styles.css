@@ -1,0 +1,43 @@
+/* workexperience-styles.css */
+:host {
+    display: block;
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 20px;
+  }
+  
+  .workexperience {
+    scroll-margin-top: 100px;
+  }
+  
+  .workexperience aside {
+    border-bottom: 1px solid #000;
+    margin: 0 0 30px;
+    padding: 0 0 20px;
+  }
+  
+  .more_button {
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+    font-size: 14px;
+    text-align: center;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .more_button:hover {
+    background-color: #222;
+  }
+  
+  .more_jobs {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-out;
+  }
+  
+  .more_jobs.visible {
+    max-height: 1000px; /* Adjust this value based on your content */
+  }
