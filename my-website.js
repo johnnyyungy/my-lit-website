@@ -3,84 +3,27 @@ import { LitElement, html, css } from 'https://cdn.jsdelivr.net/npm/lit@3.2.1/+e
 class MyWebsite extends LitElement {
   static properties = {
     navVisible: { type: Boolean },
+    jobsVisible: { type: Boolean },
+    slideIndex: { type: Number },
   };
 
   constructor() {
     super();
     this.navVisible = false;
-    console.log('MyWebsite component initialized'); // Debugging log
+    this.jobsVisible = false;
+    this.slideIndex = 1;
   }
 
   static styles = css`
-    /* Component-specific styles */
-    .toggle button {
-      padding: 9px 10px;
-      background-color: transparent;
-      border: none;
-    }
-
-    .toggle button:hover {
-      cursor: pointer;
-    }
-
-    .toggle svg path {
-      fill: white;
-    }
-
-    .toggle button:hover svg path {
-      fill: #FFD817;
-    }
-
-    nav {
-      display: none;
-      background-color: #000;
-      padding: 0px 0px 10px 0px;
-      border-top: 1px solid #333;
-    }
-
-    nav.showNav {
-      display: block;
-    }
-
-    nav a {
-      padding: 0px 10px;
-      display: inline-block;
-      width: 100%;
-      color: white;
+    /* Add your CSS styles here */
+    body {
+      padding: 38px 0px 100px 0px;
+      margin: 0px;
+      font-family: helvetica, arial, sans-serif;
       font-size: 14px;
-      text-decoration: none;
-      line-height: 38px;
+      background-color: #FFD817;
     }
 
-    nav a:hover {
-      color: #FFD817;
-      background-color: #222;
-    }
-
-    .intro {
-      background-color: #fff;
-      min-height: 400px;
-      display: flex;
-    }
-
-    .intro .wrapper {
-      flex-direction: column;
-    }
-
-    .intro .photo img {
-      width: 100%;
-    }
-
-    .intro-social a {
-      text-decoration: none;
-      color: #000;
-    }
-
-    .intro-social a:hover {
-      text-decoration: underline;
-    }
-
-    /* Header */
     header {
       background-color: black;
       color: white;
@@ -91,37 +34,10 @@ class MyWebsite extends LitElement {
       line-height: 150px;
     }
 
-    /* Footer */
-    footer {
-      position: fixed;
-      left: 0;
-      bottom: 0;
-      width: 100%;
-      text-align: center;
-      background-color: white;
-      box-sizing: border-box;
-      border-top: 2px solid black;
-    }
-
-    div.socialmedia {
-      padding: 14px 0px 10px;
-    }
-
-    div.socialmedia a {
-      display: inline-block;
-      height: 35px;
-    }
-
-    div.copyright {
-      width: 100%;
-      padding: 10px;
-      background-color: black;
-      color: white;
-    }
+    /* Add the rest of your CSS styles here */
   `;
 
   render() {
-    console.log('Rendering MyWebsite component'); // Debugging log
     return html`
       <!-- Header -->
       <header>
@@ -174,24 +90,194 @@ class MyWebsite extends LitElement {
         </div>
       </section>
 
+      <!-- About Me Section -->
+      <section class="aboutme" id="aboutme">
+        <div class="wrapper">
+          <div class="me">
+            <h2>My Background</h2>
+            <p>I have worked in the industry for almost nine years, starting in Customer Services and progressing to Design & UX.</p>
+            <p>As a UI/UX Analyst, I am responsible for documenting design specifications and visually testing enhancements to ensure the delivery of intuitive, user-focused solutions.</p>
+            <p>Working closely with a talented team of designers, developers, and analysts, I conduct detailed design analyses, create HTML/CSS and iOS prototypes, and produce optimized assets using tools like Adobe Photoshop, Illustrator, and Sketch. I ensure design quality by performing thorough QA testing, logging issues, and collaborating with developers to resolve them. Additionally, I participate in cross-device and browser testing, document visual guidelines, and present specifications to stakeholders to maintain high standards for user interface and experience.</p>
+          </div>
+          <aside>
+            <h2>Skills</h2>
+            <ul>
+              <li>Communication</li>
+              <li>Critical thinking</li>
+              <li>Attention to detail</li>
+              <li>Adaptable</li>
+              <li>Hard working</li>
+              <li>Quick learner</li>
+              <li>Teamwork</li>
+              <li>Positive attitude</li>
+            </ul>
+          </aside>
+        </div>
+      </section>
+
+      <!-- Quote Section -->
+      <section class="quote">
+        <div class="wrapper">
+          <p>"I am always open and eager to learn new things, which I believe is vital given the ever-changing nature of the technology industry.</p>
+          <p>I have been learning HTML5, CSS3, JavaScript and iOS development in my free time."</p>
+        </div>
+      </section>
+
+      <!-- Work Experience Section -->
+      <section class="workexperience" id="work">
+        <div class="wrapper">
+          <h2>Work Experience</h2>
+          <aside>
+            <h3>UI/UX Analyst</h3>
+            <h4>2022 to present</h4>
+            <p>Collaborating closely with designers, developers, and analysts to enhance user experience and implement new product features while maintaining brand consistency. Conducting detailed design analyses, creating prototypes, and documenting visual guidelines to ensure alignment with business and user needs. Performing cross-device and browser testing, logging design issues in JIRA, and following up on resolutions to maintain high-quality standards. Delivering optimized assets and supporting front-end developers by providing clear visual requirements and conducting design QA's throughout the development process.</p>
+          </aside>
+          <aside>
+            <h3>Operations Support Compliance Assistant</h3>
+            <h4>2017 to 2022</h4>
+            <p>Reviewing account activity, customer correspondence, and translations to complete detailed audit checklists of operational processes. Investigating anomalies on reports that may indicate potential compliance breaches. Conducting website checks across all domains. Identifying and escalating any instances of non-compliance with regulatory and licensing conditions, as well as any internal process errors.</p>
+          </aside>
+          <aside>
+            <h3>Customer Accounts Advisor</h3>
+            <h4>2016 to 2017</h4>
+            <p>Customer accounts advisor dealing with a wide range of customer account queries. Daily duties include correctly advising customers on settlements of bets, balance histories, and login problems. Main duties include accurately guiding and educating customers with their queries while strictly complying with company policy and procedures.</p>
+          </aside>
+          <div class="more_button" id="jobToggle" @click=${this.toggleJobs}>More &gt;</div>
+          <div class="more_jobs ${this.jobsVisible ? 'showJobs' : ''}">
+            <aside>
+              <h3>CSI/RECON Production Supervisor - Vaultex UK LTD</h3>
+              <h4>2013 – 2016</h4>
+              <p>Part of the management team responsible for motivating, leading, and developing a team of 31 individuals. Supporting operational control initiatives in place and in development. Enforcing operational changes to comply with Bank of England requirements. Ensuring that company and Bank of England security policies are maintained and maximum levels of customer service are met or exceeded. Daily duties include people management, multi-skilling staff, managing annual leave, conducting return-to-work interviews, and managing behavior, attendance, and sickness. Main duties include shift planning, smooth running of high-speed note sorting machines for the production of ATM-fit money to fill ATM machines all over the country while complying with Bank of England procedures. Also responsible for complex reconciliation procedures requiring the use of problem-solving skills to make big decisions regarding customer money to ensure customer satisfaction and that customers are being credited on time. Other duties include being responsible for managing team performance, managing and monitoring KPIs, encouraging teamwork, and driving the team to work to its full potential, recognizing and rewarding excellent performance through quarterly reviews, and managing the annual performance bonus budget.</p>
+            </aside>
+            <aside>
+              <h3>DTP Production Supervisor - Vaultex UK LTD</h3>
+              <h4>2012 - 2013</h4>
+              <p>Part of the management team responsible for motivating, leading, and developing a team of 26 individuals. Duties include people management, including shift planning, managing annual leave, conducting return-to-work interviews, and managing behavior, attendance, and sickness. Mainly responsible for millions of pounds of physical cash from a multitude of retailers and bank branches and ensuring the cash center operates maximally to meet bank deadlines and comply with complex banking procedures. Other duties include managing and monitoring KPIs, thus being responsible for driving team performance and managing the team to work to its full potential. Recognizing and rewarding excellent performance through quarterly reviews and managing the annual performance bonus budget, implementing and enforcing changes to processing procedures.</p>
+            </aside>
+            <div class="more_button" @click=${this.toggleJobs}>Less ^</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Education Section -->
+      <section class="education" id="education">
+        <div class="wrapper">
+          <h2>Education</h2>
+          <aside>
+            <h3>Staffordshire University, Stoke-On-Trent</h3>
+            <h4>2008 - 2011</h4>
+            <p>Bachelors of Science in Sports and Exercise Nutrition: <b>First Class Honours</b></p>
+          </aside>
+          <aside>
+            <h3>Newcastle under Lyme College, Newcastle, Staffordshire</h3>
+            <h4>2006 - 2008</h4>
+            <p>BTEC ND Sport and Exercise Science: <b>Triple Distinction</b></p>
+          </aside>
+          <aside>
+            <h3>Wolstanton High School, Wolstanton, Newcastle, Staffordshire</h3>
+            <h4>1996 - 2001</h4>
+            <p>9 GCSEs; English, English Lit, Maths, Science Double Award, German, History, IT, and Electronics.</p>
+          </aside>
+        </div>
+      </section>
+
+      <!-- Interests Section -->
+      <section class="interests" id="interests">
+        <div class="wrapper">
+          <div>
+            <h2>Outside Interests</h2>
+            <p>Outside of work, my hobbies include traveling, cooking, fitness, and learning different languages.</p>
+            <p>For fitness, I train Olympic weightlifting and CrossFit. I practice Mixed Martial Arts, in particular Muay Thai and Brazilian Jiu-Jitsu.</p>
+            <p>I like to collect limited edition action figures, such as Transformers and Power Rangers.</p>
+            <p>I am also interested in photography and videography. I combine my interests by taking photos on my travels and making videos for my YouTube cooking channel, <a href="https://www.youtube.com/channel/UCZhsbHXGqVWHivekOiC9ofQ" target="_blank">Hello! Taste</a>.</p>
+            <p>I also have a fitness blog that is built in WordPress: <a href="http://www.trainsmartnothard.com/" target="_blank">www.trainsmartnothard.com</a></p>
+          </div>
+          <!-- Carousel Section -->
+          <div class="photo">
+            <div class="slideshow-container">
+              <!-- Full-width images with number and caption text -->
+              <div class="mySlides fade">
+                <div class="numbertext">1 / 3</div>
+                <img src="muay_thai.jpg" style="width:100%" alt="Muay Thai">
+                <div class="text">Muay Thai</div>
+              </div>
+
+              <div class="mySlides fade">
+                <div class="numbertext">2 / 3</div>
+                <img src="toys.jpg" style="width:100%" alt="Power Rangers Collection">
+                <div class="text">Power Rangers Collection</div>
+              </div>
+
+              <div class="mySlides fade">
+                <div class="numbertext">3 / 3</div>
+                <img src="japan.jpg" style="width:100%" alt="Kyoto, Japan">
+                <div class="text">Kyoto, Japan</div>
+              </div>
+
+              <!-- Next and previous buttons -->
+              <a class="prev" @click=${() => this.plusSlides(-1)}>&#10094;</a>
+              <a class="next" @click=${() => this.plusSlides(1)}>&#10095;</a>
+            </div>
+            <br>
+
+            <!-- The dots/circles -->
+            <div style="text-align:center">
+              <span class="dot" @click=${() => this.currentSlide(1)}></span>
+              <span class="dot" @click=${() => this.currentSlide(2)}></span>
+              <span class="dot" @click=${() => this.currentSlide(3)}></span>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <!-- Footer -->
       <footer>
         <div class="socialmedia">
-          <a href="http://www.instagram.com/johnnyyungy" target="_blank">Instagram</a>
-          <a href="https://twitter.com/johnnyyungy" target="_blank">X</a>
-          <a href="https://www.youtube.com/channel/UCZhsbHXGqVWHivekOiC9ofQ" target="_blank">Youtube</a>
-          <a href="https://www.facebook.com/johnnyyungy" target="_blank">Facebook</a>
-          <a href="https://linkedin.com/in/john-yung-53930945" target="_blank">LinkedIn</a>
+          <a href="http://www.instagram.com/johnnyyungy" target="_blank"><img src="instagram.png" width="35" height="35" alt="Instagram"></a>
+          <a href="https://twitter.com/johnnyyungy" target="_blank"><img src="x.png" width="35" height="35" alt="X"></a>
+          <a href="https://www.youtube.com/channel/UCZhsbHXGqVWHivekOiC9ofQ" target="_blank"><img src="youtube.png" width="35" height="35" alt="YouTube"></a>
+          <a href="https://www.facebook.com/johnnyyungy" target="_blank"><img src="facebook.png" width="35" height="35" alt="Facebook"></a>
+          <a href="https://linkedin.com/in/john-yung-53930945" target="_blank"><img src="linkedin.png" width="35" height="35" alt="LinkedIn"></a>
         </div>
-        <div class="copyright">
-          &copy; 2023 John Yung. All rights reserved.
-        </div>
+        <div class="copyright">All work © John Yung 2019 - 2025 - All Rights Reserved</div>
       </footer>
     `;
   }
 
   toggleNav() {
     this.navVisible = !this.navVisible;
+  }
+
+  toggleJobs() {
+    this.jobsVisible = !this.jobsVisible;
+  }
+
+  plusSlides(n) {
+    this.slideIndex += n;
+    this.showSlides();
+  }
+
+  currentSlide(n) {
+    this.slideIndex = n;
+    this.showSlides();
+  }
+
+  showSlides() {
+    const slides = this.shadowRoot.querySelectorAll('.mySlides');
+    const dots = this.shadowRoot.querySelectorAll('.dot');
+
+    if (this.slideIndex > slides.length) {
+      this.slideIndex = 1;
+    }
+    if (this.slideIndex < 1) {
+      this.slideIndex = slides.length;
+    }
+
+    slides.forEach((slide) => (slide.style.display = 'none'));
+    dots.forEach((dot) => dot.classList.remove('active'));
+
+    slides[this.slideIndex - 1].style.display = 'block';
+    dots[this.slideIndex - 1].classList.add('active');
   }
 }
 
