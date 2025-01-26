@@ -1,7 +1,7 @@
 import { LitElement, html, css } from 'https://cdn.jsdelivr.net/npm/lit@3.2.1/+esm';
 
 export class IntroComponent extends LitElement {
-  static styles = css`
+  static styles = [globalStyles, css`
     .intro {
       background-color: #fff;
       min-height: 400px;
@@ -40,7 +40,7 @@ export class IntroComponent extends LitElement {
     margin-top: 0;
   }
 }
-  `;
+  `];
 
   render() {
     return html`
