@@ -1,7 +1,8 @@
 import { LitElement, html, css } from 'https://cdn.jsdelivr.net/npm/lit@3.2.1/+esm';
+import { globalStyles } from './global-styles.js';
 
 export class HeaderComponent extends LitElement {
-  static styles = css`
+  static styles = [globalStyles, css`
     .toggle {
       text-align: left;
       position: fixed;
@@ -80,7 +81,7 @@ export class HeaderComponent extends LitElement {
         padding: 0px 20px; /* Adjust spacing for desktop */
       }
     }
-  `;
+  `];
 
   constructor() {
     super();
