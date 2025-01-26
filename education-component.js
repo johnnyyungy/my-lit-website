@@ -1,7 +1,8 @@
 import { LitElement, html, css } from 'https://cdn.jsdelivr.net/npm/lit@3.2.1/+esm';
+import { globalStyles } from './global-styles.js';
 
 export class EducationComponent extends LitElement {
-  static styles = css`
+  static styles = [globalStyles, css`
     :host {
       display: block;
       background-color: #fff;
@@ -39,7 +40,7 @@ export class EducationComponent extends LitElement {
       line-height: 1.6;
       margin: 0;
     }
-  `;
+  `];
 
   render() {
     return html`
