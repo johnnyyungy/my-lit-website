@@ -111,17 +111,22 @@ export class HeaderComponent extends LitElement {
       // Debugging: Log the app element
       console.log('App Element:', appElement);
 
-      // Query the shadow root of the app element to find the target section
-      const targetElement = appElement.shadowRoot.getElementById(targetId);
+      // Check if the shadow root exists
+      if (appElement.shadowRoot) {
+        // Query the shadow root of the app element to find the target section
+        const targetElement = appElement.shadowRoot.getElementById(targetId);
 
-      // Debugging: Log the target element
-      console.log('Target Element:', targetElement);
+        // Debugging: Log the target element
+        console.log('Target Element:', targetElement);
 
-      if (targetElement) {
-        // Smooth scroll to the target element
-        targetElement.scrollIntoView({ behavior: 'smooth' });
+        if (targetElement) {
+          // Smooth scroll to the target element
+          targetElement.scrollIntoView({ behavior: 'smooth' });
+        } else {
+          console.error(`Element with id "${targetId}" not found in shadow DOM.`);
+        }
       } else {
-        console.error(`Element with id "${targetId}" not found in shadow DOM.`);
+        console.error('Shadow root not found in my-app element.');
       }
     } else {
       console.error('my-app element not found.');
