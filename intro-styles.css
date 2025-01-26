@@ -1,0 +1,30 @@
+.intro {
+    scroll-margin-top: 100px;
+    background-color: #f0f8ff; /* Light blue background */
+    min-height: 400px;
+    display: flex;
+    border: 2px solid #4682b4; /* Steel blue border */
+    border-radius: 10px; /* Rounded corners */
+    padding: 20px; /* Add some padding */
+  }
+  
+  .wrapper {
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff; /* White background */
+    border: 1px solid #d3d3d3; /* Light gray border */
+    border-radius: 8px; /* Rounded corners */
+  }
+  
+  .intro-social a {
+    text-decoration: none;
+    color: #2e8b57; /* Sea green text color */
+  }
+  
+  .intro-social a:hover {
+    text-decoration: underline;
+    color: #4682b4; /* Steel blue on hover */
+  }
