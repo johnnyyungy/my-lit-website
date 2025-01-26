@@ -2,60 +2,55 @@ import { LitElement, html, css } from 'https://cdn.jsdelivr.net/npm/lit@3.2.1/+e
 import { globalStyles } from './global-styles.js';
 
 export class IntroComponent extends LitElement {
-  static styles = [
-    globalStyles,
-    css`
-      /* Intro */
-      .intro {
-        background-color: #fff;
-        min-height: 400px;
-        display: flex;
-      }
+  static styles = [globalStyles, css`
+    .intro {
+      background-color: #fff;
+      min-height: 400px;
+      display: flex;
+    }
 
-      .intro .wrapper {
-        flex-direction: column;
-      }
+    .wrapper {
+      margin: 0 auto;
+      max-width: 1200px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+    }
 
-      .intro .wrapper aside {
-        flex-grow: 1;
-      }
+    .photo img {
+      width: 100%;
+    }
 
-      .intro .wrapper .photo {
-        background-size: cover;
-        margin-top: 30px;
-      }
+    .intro-social a {
+      text-decoration: none;
+      color: #000;
+    }
 
-      .intro .wrapper .photo img {
-        width: 100%;
-      }
+    .intro-social a:hover {
+      text-decoration: underline;
+    }
 
-      .intro-social {
-        font-size: 18px;
-      }
+    .photo {
+      margin-top: 30px;
+      max-width: 45%;
+    }
 
-      .intro-social a {
-        text-decoration: none;
-        color: #000;
-      }
+    @media only screen and (min-width: 920px) {
 
-      .intro-social a:hover {
-        text-decoration: underline;
-      }
+    /* Intro  */
 
-      /* Media query for wider screens */
-      @media only screen and (min-width: 920px) {
-        .intro .wrapper {
-          flex-direction: row;
-        }
+	.intro .wrapper{
+		flex-direction: row;
 
-        .intro .wrapper .photo {
-          margin-left: 30px;
-          max-width: 45%;
-          margin-top: 0px;
-        }
-      }
-    `
-  ];
+	}
+
+	.intro .wrapper .photo{
+		margin-left: 30px;
+		max-width: 45%;
+		margin-top: 0px;
+	}
+    }
+  `];
 
   render() {
     return html`
