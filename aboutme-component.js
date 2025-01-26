@@ -34,6 +34,11 @@ export class AboutMeComponent extends LitElement {
       .wrapper {
         flex-direction: row;
       }
+
+      .aboutme aside{
+		min-width: 30%;
+		padding-top: 0px;
+	}
     }
   `];
 
