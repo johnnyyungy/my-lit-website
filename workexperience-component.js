@@ -2,6 +2,7 @@ import { LitElement, html } from 'https://cdn.jsdelivr.net/npm/lit@3.2.1/+esm';
 import { globalStyles } from './global-styles.js';
 import { classMap } from 'https://cdn.jsdelivr.net/npm/lit@3.2.1/directives/class-map.js';
 
+
 export class WorkExperienceComponent extends LitElement {
   static properties = {
     showJobs: { type: Boolean },
