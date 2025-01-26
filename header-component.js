@@ -10,6 +10,7 @@ export class HeaderComponent extends LitElement {
       background-color: black;
       height: 38px;
       box-sizing: border-box;
+      z-index: 1000; /* Ensure it's above other content */
     }
 
     .toggle button {
@@ -39,6 +40,7 @@ export class HeaderComponent extends LitElement {
       display: none;
       padding: 0px 0px 10px 0px;
       border-top: 1px solid #333;
+      z-index: 1000; /* Ensure it's above other content */
     }
 
     nav a {
@@ -75,6 +77,7 @@ export class HeaderComponent extends LitElement {
 
       nav a {
         width: auto;
+        padding: 0px 20px; /* Adjust spacing for desktop */
       }
     }
   `;
@@ -86,7 +89,21 @@ export class HeaderComponent extends LitElement {
 
   toggleNav() {
     this.showNav = !this.showNav;
+    this.requestUpdate(); // Trigger a re-render
+  }
+
+  handleNavigation(event) {
+    event.preventDefault(); // Prevent default anchor behavior
+    const targetId = event.target.getAttribute('href').substring(1); // Get the target section ID
+    const targetElement = document.getElementById(targetId); // Find the target element
+
+    // Close the mobile nav menu after clicking a link
+    this.showNav = false;
     this.requestUpdate();
+
+    if (targetElement) {
+      targetElement.scrollIntoView({ behavior: 'smooth' }); // Smooth scroll to the target
+    }
   }
 
   render() {
@@ -101,11 +118,11 @@ export class HeaderComponent extends LitElement {
         </button>
       </div>
       <nav class="${this.showNav ? 'showNav' : ''}">
-        <a href="#home">Home</a>
-        <a href="#aboutme">My Background</a>
-        <a href="#work">Work Experience</a>
-        <a href="#education">Education</a>
-        <a href="#interests">Outside Interests</a>
+        <a href="#home" @click="${this.handleNavigation}">Home</a>
+        <a href="#aboutme" @click="${this.handleNavigation}">My Background</a>
+        <a href="#work" @click="${this.handleNavigation}">Work Experience</a>
+        <a href="#education" @click="${this.handleNavigation}">Education</a>
+        <a href="#interests" @click="${this.handleNavigation}">Outside Interests</a>
       </nav>
     `;
   }
