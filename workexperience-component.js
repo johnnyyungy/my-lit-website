@@ -1,6 +1,6 @@
-import { LitElement, html } from 'https://cdn.jsdelivr.net/npm/lit@3.2.1/+esm';
-import { globalStyles } from './global-styles.js';
+import { LitElement, html, css } from 'https://cdn.jsdelivr.net/npm/lit@3.2.1/+esm';
 import { classMap } from 'https://cdn.jsdelivr.net/npm/lit@3.2.1/directives/class-map.js';
+import { globalStyles } from './global-styles.js';
 
 
 export class WorkExperienceComponent extends LitElement {
