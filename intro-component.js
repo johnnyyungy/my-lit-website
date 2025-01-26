@@ -4,52 +4,38 @@ import { globalStyles } from './global-styles.js';
 export class IntroComponent extends LitElement {
   static styles = [globalStyles, css`
     .intro {
-	background-color: #fff;
-	min-height: 400px;
-	display: flex;
-	
-}
+      background-color: #fff;
+      min-height: 400px;
+      display: flex;
+    }
 
+    .wrapper {
+      margin: 0 auto;
+      max-width: 1200px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+    }
 
+    .photo img {
+      width: 100%;
+    }
 
-.intro .wrapper{
-	flex-direction: column;
-}
+    .intro-social a {
+      text-decoration: none;
+      color: #000;
+    }
 
-.intro .wrapper aside {
-	flex-grow: 1;
-}
-
-.intro .wrapper .photo{
-	background-size: cover;
-	margin-top: 30px;
-}
-
-.intro .wrapper .photo img{
-	width: 100%;
-}
-
-.intro-social {
-	font-size: 18px; 
-}
-
-.intro-social a{
-	text-decoration: none;
-	color: #000;
-	
-}
-
-.intro-social a:hover{
-	text-decoration: underline;
-}
-
+    .intro-social a:hover {
+      text-decoration: underline;
+    }
 
     @media only screen and (min-width: 920px) {
-      .intro .wrapper .photo{
-		margin-left: 30px;
-		max-width: 45%;
-		margin-top: 0px;
-	}
+      .photo {
+        margin-left: 30px;
+        margin-top: 0;
+        max-width: 45%
+      }
 
       .intro .wrapper{
 		flex-direction: row;
