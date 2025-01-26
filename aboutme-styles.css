@@ -3,6 +3,10 @@
     scroll-margin-top: 100px;
     min-height: 400px;
     display: flex;
+    background-color: #f0f8ff; /* Light blue background for the section */
+    border: 2px solid #4682b4; /* Steel blue border */
+    border-radius: 10px; /* Rounded corners */
+    padding: 20px; /* Add some padding */
   }
   
   .wrapper {
@@ -11,16 +15,36 @@
     padding: 20px;
     display: flex;
     flex-direction: column;
+    background-color: #ffffff; /* White background for the wrapper */
+    border: 1px solid #d3d3d3; /* Light gray border */
+    border-radius: 8px; /* Rounded corners */
   }
   
   .me {
     margin-right: 50px;
+    color: #2e8b57; /* Sea green text color */
+  }
+  
+  .me h2 {
+    color: #4682b4; /* Steel blue heading color */
+  }
+  
+  aside {
+    background-color: #e6f7ff; /* Light cyan background for the aside */
+    padding: 15px; /* Add some padding */
+    border: 1px solid #87ceeb; /* Sky blue border */
+    border-radius: 8px; /* Rounded corners */
+  }
+  
+  aside h2 {
+    color: #4682b4; /* Steel blue heading color */
   }
   
   aside ul {
     margin: 0px 0px 0px 20px;
     padding: 0px;
     line-height: 22px;
+    color: #2e8b57; /* Sea green text color */
   }
   
   aside ul li {
