@@ -1,87 +1,8 @@
-import { LitElement, html, css } from 'https://cdn.jsdelivr.net/npm/lit@3.2.1/+esm';
+import { LitElement, html } from 'https://cdn.jsdelivr.net/npm/lit@3.2.1/+esm';
 import { globalStyles } from './global-styles.js';
 
 export class HeaderComponent extends LitElement {
-  static styles = [globalStyles, css`
-    .toggle {
-      text-align: left;
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background-color: black;
-      height: 38px;
-      box-sizing: border-box;
-      z-index: 1000; /* Ensure it's above other content */
-    }
-
-    .toggle button {
-      padding: 9px 10px;
-      background-color: transparent;
-      border: none;
-    }
-
-    .toggle button:hover {
-      cursor: pointer;
-    }
-
-    .toggle svg path {
-      fill: white;
-    }
-
-    .toggle button:hover svg path {
-      fill: #FFD817;
-    }
-
-    nav {
-      text-align: left;
-      position: fixed;
-      top: 38px;
-      width: 100%;
-      background-color: #000;
-      display: none;
-      padding: 0px 0px 10px 0px;
-      border-top: 1px solid #333;
-      z-index: 1000; /* Ensure it's above other content */
-    }
-
-    nav a {
-      padding: 0px 10px;
-      display: inline-block;
-      width: 100%;
-      color: white;
-      font-size: 14px;
-      text-decoration: none;
-      line-height: 38px;
-    }
-
-    nav a:hover {
-      color: #FFD817;
-      background-color: #222;
-    }
-
-    nav.showNav {
-      display: block;
-    }
-
-    @media only screen and (min-width: 920px) {
-      .toggle {
-        display: none;
-      }
-
-      nav {
-        display: block;
-        top: 0px;
-        padding: 0px;
-        border: none;
-        text-align: center;
-      }
-
-      nav a {
-        width: auto;
-        padding: 0px 20px; /* Adjust spacing for desktop */
-      }
-    }
-  `];
+  static styles = [globalStyles];
 
   constructor() {
     super();
@@ -90,27 +11,26 @@ export class HeaderComponent extends LitElement {
 
   toggleNav() {
     this.showNav = !this.showNav;
-    this.requestUpdate(); // Trigger a re-render
+    this.requestUpdate();
   }
 
   handleNavigation(event) {
-    event.preventDefault(); // Prevent default anchor behavior
-    const targetId = event.target.getAttribute('href').substring(1); // Get the target section ID
+    event.preventDefault();
+    const targetId = event.target.getAttribute('href').substring(1);
 
-    // Close the mobile nav menu after clicking a link
     this.showNav = false;
     this.requestUpdate();
 
-    // Emit a custom event with the target ID
     this.dispatchEvent(new CustomEvent('navigate', {
       detail: { targetId },
-      bubbles: true, // Ensure the event bubbles up to the parent
-      composed: true // Ensure the event crosses the shadow DOM boundary
+      bubbles: true,
+      composed: true,
     }));
   }
 
   render() {
     return html`
+      <link rel="stylesheet" href="./header-styles.css">
       <div class="toggle">
         <button @click="${this.toggleNav}">
           <svg width="20px" height="20px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg">
