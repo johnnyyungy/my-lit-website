@@ -1,7 +1,8 @@
 import { LitElement, html, css } from 'https://cdn.jsdelivr.net/npm/lit@3.2.1/+esm';
+import { globalStyles } from './global-styles.js';
 
 export class IntroComponent extends LitElement {
-  static styles = css`
+  static styles = [globalStyles, css`
     .intro {
       background-color: #fff;
       min-height: 400px;
@@ -30,17 +31,17 @@ export class IntroComponent extends LitElement {
     }
 
     .photo {
-  margin-top: 30px;
-  max-width: 45%;
-}
+      margin-top: 30px;
+      max-width: 45%;
+    }
 
-@media only screen and (min-width: 920px) {
-  .photo {
-    margin-left: 30px;
-    margin-top: 0;
-  }
-}
-  `;
+    @media only screen and (min-width: 920px) {
+      .photo {
+        margin-left: 30px;
+        margin-top: 0;
+      }
+    }
+  `];
 
   render() {
     return html`
