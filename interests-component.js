@@ -1,123 +1,44 @@
 import { LitElement, html, css } from 'https://cdn.jsdelivr.net/npm/lit@3.2.1/+esm';
 
 export class InterestsComponent extends LitElement {
-  static styles = css`
+    static styles = css`
     :host {
       display: block;
+      margin: 0 auto;
+      max-width: 800px;
+      padding: 20px;
     }
-
+  
     .interests .wrapper {
       display: flex;
       flex-direction: column;
-      margin: 0 auto;
-      max-width: 1200px;
-      padding: 20px;
+      gap: 20px;
     }
-
-    .interests .wrapper .photo {
-      margin-top: 30px;
+  
+    .interests .photo {
+      margin-top: 20px;
     }
-
-    .interests .wrapper .photo img {
+  
+    .interests img {
       width: 100%;
       height: auto;
       border-radius: 8px;
     }
-
+  
     .interests a {
       color: black;
       font-weight: bold;
       text-decoration: none;
     }
-
+  
     .interests a:hover {
       text-decoration: underline;
     }
-
-    /* Slideshow styles */
-    .slideshow-container {
-      position: relative;
-      max-width: 1000px;
-      margin: auto;
-    }
-
-    .mySlides {
-      display: none;
-    }
-
-    .prev, .next {
-      cursor: pointer;
-      position: absolute;
-      top: 50%;
-      width: auto;
-      margin-top: -22px;
-      padding: 16px;
-      color: white;
-      font-weight: bold;
-      font-size: 18px;
-      transition: 0.3s ease;
-      border-radius: 0 3px 3px 0;
-      user-select: none;
-      background-color: rgba(0, 0, 0, 0.5);
-    }
-
-    .next {
-      right: 0;
-      border-radius: 3px 0 0 3px;
-    }
-
-    .prev:hover, .next:hover {
-      background-color: rgba(0, 0, 0, 0.8);
-    }
-
-    .text {
-      color: #f2f2f2;
-      font-size: 15px;
-      padding: 8px 12px;
-      position: absolute;
-      bottom: 8px;
-      width: 100%;
-      text-align: center;
-      background-color: rgba(0, 0, 0, 0.5);
-    }
-
-    .numbertext {
-      color: #f2f2f2;
-      font-size: 12px;
-      padding: 8px 12px;
-      position: absolute;
-      top: 0;
-      background-color: rgba(0, 0, 0, 0.5);
-    }
-
-    .dots {
-      text-align: center;
-      margin-top: 10px;
-    }
-
-    .dot {
-      cursor: pointer;
-      height: 15px;
-      width: 15px;
-      margin: 0 5px;
-      background-color: #bbb;
-      border-radius: 50%;
-      display: inline-block;
-      transition: background-color 0.3s ease;
-    }
-
-    .active, .dot:hover {
-      background-color: #717171;
-    }
-
-    .fade {
-      animation-name: fade;
-      animation-duration: 1.5s;
-    }
-
-    @keyframes fade {
-      from { opacity: 0.4; }
-      to { opacity: 1; }
+  
+    @media (max-width: 768px) {
+      .interests .wrapper {
+        flex-direction: column;
+      }
     }
   `;
 
