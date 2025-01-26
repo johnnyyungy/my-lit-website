@@ -96,34 +96,17 @@ export class HeaderComponent extends LitElement {
   handleNavigation(event) {
     event.preventDefault(); // Prevent default anchor behavior
     const targetId = event.target.getAttribute('href').substring(1); // Get the target section ID
-  
+
     // Close the mobile nav menu after clicking a link
     this.showNav = false;
     this.requestUpdate();
-  
-    // Find the main app component (my-app)
-    const appElement = document.querySelector('my-app');
-  
-    if (appElement) {
-      // Access the shadow root of the app element
-      const shadowRoot = appElement.shadowRoot;
-  
-      if (shadowRoot) {
-        // Query the shadow root to find the target section
-        const targetElement = shadowRoot.getElementById(targetId);
-  
-        if (targetElement) {
-          // Smooth scroll to the target element
-          targetElement.scrollIntoView({ behavior: 'smooth' });
-        } else {
-          console.error(`Element with id "${targetId}" not found in shadow DOM.`);
-        }
-      } else {
-        console.error('Shadow root not found in my-app element.');
-      }
-    } else {
-      console.error('my-app element not found.');
-    }
+
+    // Emit a custom event with the target ID
+    this.dispatchEvent(new CustomEvent('navigate', {
+      detail: { targetId },
+      bubbles: true, // Ensure the event bubbles up to the parent
+      composed: true // Ensure the event crosses the shadow DOM boundary
+    }));
   }
 
   render() {
