@@ -1,53 +1,12 @@
-import { LitElement, html, css } from 'https://cdn.jsdelivr.net/npm/lit@3.2.1/+esm';
+import { LitElement, html } from 'https://cdn.jsdelivr.net/npm/lit@3.2.1/+esm';
 import { globalStyles } from './global-styles.js';
 
 export class EducationComponent extends LitElement {
-  static styles = [globalStyles, css`
-    :host {
-      display: block;
-      background-color: #fff;
-      padding: 40px 20px;
-    }
-
-    .education {
-    scroll-margin-top: 100px;
-    }
-
-    .wrapper {
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    aside {
-      margin: 0 0 30px;
-      padding: 0 0 20px;
-    }
-
-    aside + aside {
-      border-top: 1px solid #000;
-      padding-top: 30px;
-    }
-
-    h3 {
-      font-size: 24px;
-      margin: 0 0 10px;
-    }
-
-    h4 {
-      font-size: 18px;
-      color: #555;
-      margin: 0 0 15px;
-    }
-
-    p {
-      font-size: 16px;
-      line-height: 1.6;
-      margin: 0;
-    }
-  `];
+  static styles = [globalStyles];
 
   render() {
     return html`
+      <link rel="stylesheet" href="./education-styles.css">
       <section class="education" id="education">
         <div class="wrapper">
           <h2>Education</h2>
