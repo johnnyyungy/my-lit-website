@@ -29,16 +29,17 @@ export class IntroComponent extends LitElement {
       text-decoration: underline;
     }
 
-    @media only screen and (min-width: 920px) {
-      .wrapper {
-        flex-direction: row;
-      }
+    .photo {
+  margin-top: 30px;
+  max-width: 45%;
+}
 
-      .photo {
-        margin-left: 30px;
-        max-width: 45%;
-      }
-    }
+@media only screen and (min-width: 920px) {
+  .photo {
+    margin-left: 30px;
+    margin-top: 0;
+  }
+}
   `;
 
   render() {

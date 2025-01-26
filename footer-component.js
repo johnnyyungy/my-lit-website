@@ -14,8 +14,11 @@ export class FooterComponent extends LitElement {
     }
 
     .socialmedia {
-      padding: 14px 0 10px;
-    }
+  padding: 14px 0 10px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
 
     .socialmedia a {
       display: inline-block;
