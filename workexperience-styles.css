@@ -1,29 +1,86 @@
 /* workexperience-styles.css */
-.more_button {
-    padding: 10px 20px;
-    background-color: #333;
+:host {
+    display: block;
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 20px;
+    font-family: 'Poppins', sans-serif; /* Fun, modern font */
+  }
+  
+  .workexperience {
+    scroll-margin-top: 100px;
+  }
+  
+  .workexperience aside {
+    border-bottom: 2px solid #ff6f61; /* Fun coral color */
+    margin: 0 0 30px;
+    padding: 0 0 20px;
+    background-color: #f9f9f9; /* Light background for contrast */
+    border-radius: 10px; /* Rounded corners */
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .workexperience aside:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Stronger shadow on hover */
+  }
+  
+  .more_button {
+    padding: 12px 24px;
+    background-color: #ff6f61; /* Fun coral color */
     color: white;
-    font-size: 14px;
+    font-size: 16px;
     text-align: center;
     cursor: pointer;
     border: none;
-    border-radius: 4px;
-    transition: background-color 0.3s ease;
-    margin-top: 20px; /* Add space above the button */
-    margin-bottom: 20px; /* Add space below the button */
+    border-radius: 25px; /* Rounded button */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-weight: 600; /* Bold text */
   }
   
   .more_button:hover {
-    background-color: #222;
+    background-color: #ff4a3d; /* Darker coral on hover */
+    transform: scale(1.05); /* Slight grow effect */
   }
   
   .more_jobs {
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.5s ease-out;
-    margin-top: 0; /* Ensure no extra space above */
+    margin-top: 0;
   }
   
   .more_jobs.visible {
     max-height: 1000px; /* Adjust this value based on your content */
+  }
+  
+  /* Add a fun gradient background to the section */
+  .workexperience {
+    background: linear-gradient(135deg, #f9f9f9, #e0e0e0);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Add a fun heading style */
+  .workexperience h2 {
+    font-size: 32px;
+    color: #333;
+    text-align: center;
+    margin-bottom: 30px;
+    position: relative;
+  }
+  
+  .workexperience h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: #ff6f61;
+    margin: 10px auto 0;
+    border-radius: 2px;
   }
