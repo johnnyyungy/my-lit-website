@@ -1,7 +1,5 @@
 import { LitElement, html } from 'https://cdn.jsdelivr.net/npm/lit@3.2.1/+esm';
-import { classMap } from 'https://cdn.jsdelivr.net/npm/lit@3.2.1/directives/class-map.js';
 import { globalStyles } from './global-styles.js';
-
 
 export class WorkExperienceComponent extends LitElement {
   static properties = {
@@ -19,9 +17,7 @@ export class WorkExperienceComponent extends LitElement {
 
   render() {
     return html`
-      <!-- Link the external CSS file -->
       <link rel="stylesheet" href="./workexperience-styles.css">
-
       <section class="workexperience" id="work">
         <div class="wrapper">
           <h2>Work Experience</h2>
@@ -50,7 +46,7 @@ export class WorkExperienceComponent extends LitElement {
           </button>
           <div
             id="more_jobs"
-            class="more_jobs ${classMap({ visible: this.showJobs })}"
+            class="more_jobs ${this.showJobs ? 'visible' : ''}"
           >
             <aside>
               <h3>CSI/RECON Production Supervisor - Vaultex UK LTD</h3>
