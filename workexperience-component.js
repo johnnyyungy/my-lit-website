@@ -36,6 +36,8 @@ export class WorkExperienceComponent extends LitElement {
             <h4>2016 to 2017</h4>
             <p>Customer accounts advisor dealing with a wide range of customer account queries. Daily duties include correctly advising customers on settlements of bets, balance histories, and login problems. Main duties include accurately guiding and educating customers with their queries while strictly complying with company policy and procedures.</p>
           </aside>
+
+          <!-- Toggle Button -->
           <button
             class="more_button"
             @click="${this.toggleJobs}"
@@ -44,6 +46,8 @@ export class WorkExperienceComponent extends LitElement {
           >
             ${this.showJobs ? 'Less ^' : 'More >'}
           </button>
+
+          <!-- More Jobs Section -->
           <div
             id="more_jobs"
             class="more_jobs ${this.showJobs ? 'visible' : ''}"
