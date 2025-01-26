@@ -1,0 +1,521 @@
+
+* {box-sizing:border-box}
+
+body { 
+	padding: 38px 0px 100px 0px; 
+	margin: 0px;
+	font-family: helvetica, arial, sans-serif;
+	font-size: 14px;
+	background-color: #FFD817;
+}
+
+header {
+	background-color: black;
+	color: white;
+	text-align: center;
+	padding: 10px;
+	box-sizing: border-box;
+	height: 150px;
+	line-height: 150px;
+}
+
+p {
+	line-height: 1.3;
+	margin: 0px 0px 20px 0px;
+}
+
+h1 {
+	font-size: 50px;
+	margin: 0px 0px 50px 0px;
+}
+
+h2 {
+	font-size: 25px;
+	margin: 0px 0px 25px 0px;
+}
+
+h3 {
+	font-size: 20px;
+	margin: 0px 0px 20px 0px;
+}
+
+h4 {
+	font-size: 16px;
+	margin: 0px 0px 20px 0px;
+}
+
+section  {
+	padding: 50px 10px;
+	box-sizing: border-box;
+}
+
+div.wrapper {
+	margin: 0px auto;
+	display: flex;
+	max-width: 1200px;
+	flex-direction: column;
+}
+
+
+/* Nav */
+
+div.toggle {
+	text-align: left;
+	position: fixed;
+  	top: 0;
+  	width: 100%;
+  	background-color: black;
+  	height: 38px;
+  	box-sizing: border-box;
+}
+
+div.toggle button{
+	padding: 9px 10px;
+	background-color: transparent;
+	border: none;
+}
+
+div.toggle button:hover{
+	cursor: pointer;
+}
+
+div.toggle svg path{
+	fill: white;
+}
+
+div.toggle button:hover svg path{
+	fill: #FFD817;
+}
+
+nav {
+	text-align: left;
+	position: fixed;
+  	top: 38px;
+  	width: 100%;
+  	background-color: #000;
+  	display: none;
+  	padding: 0px 0px 10px 0px;
+  	border-top: 1px solid #333;
+}
+
+nav a {
+	padding: 0px 10px;
+	display: inline-block;
+	width: 100%;
+	color: white;
+	font-size: 14px;
+	text-decoration: none;
+	line-height: 38px;
+}
+
+
+nav a:hover {
+	color: #FFD817;
+	background-color: #222;
+}
+
+nav.showNav {
+	display: block;
+}
+
+
+
+
+/* Intro  */
+
+.intro {
+	background-color: #fff;
+	min-height: 400px;
+	display: flex;
+	
+}
+
+
+
+.intro .wrapper{
+	flex-direction: column;
+}
+
+.intro .wrapper aside {
+	flex-grow: 1;
+}
+
+.intro .wrapper .photo{
+	background-size: cover;
+	margin-top: 30px;
+}
+
+.intro .wrapper .photo img{
+	width: 100%;
+}
+
+.intro-social {
+	font-size: 18px; 
+}
+
+.intro-social a{
+	text-decoration: none;
+	color: #000;
+	
+}
+
+.intro-social a:hover{
+	text-decoration: underline;
+}
+
+
+.email {
+	background-color: #FFD817;
+	color: black;
+	display: inline-block;
+	padding: 10px;
+	text-decoration: none;
+	font-size: 18px;
+	margin-bottom: 30px;
+	font-weight: bold;
+}
+
+.email:hover {
+	background-color: #FFDF43;
+}
+
+/* About Me  */
+
+.aboutme {
+	min-height: 400px;
+	display: flex;
+	
+}
+
+.aboutme aside{
+	padding-top: 30px;
+}
+
+.aboutme aside ul{
+	margin: 0px 0px 0px 20px;
+	padding: 0px;
+	line-height: 22px;
+}
+
+.aboutme aside ul li{
+	margin: 0px 0px 10px 0px;
+}
+
+/* Quote  */
+
+section.quote {
+	background-color:  #333;
+	font-size: 25px;
+	line-height: 1.5;
+	font-weight: bold;
+	font-style: italic;
+	color: white;
+
+}
+
+.quote .wrapper {
+	flex-direction: column;
+	padding: 0px 30px;
+}
+
+/* Work experience */
+
+.workexperience .wrapper {
+	flex-direction: column;
+}
+
+.workexperience aside {
+	border-bottom: 1px solid #000;
+	margin: 0px 0px 30px;
+	padding:  0px 0px 10px;
+}
+
+.more_button {
+	padding: 10px;
+	background-color: #333;
+	width: 60px;
+	font-size: 12px;
+	color: white;
+	text-align: center;
+}
+
+.more_button:hover {
+	cursor: pointer;
+	background-color: #222;
+	color: white;
+}
+
+.more_jobs {
+	display: none;
+}
+
+.showJobs + .more_jobs {
+	display: block;
+}
+
+.showJobs {
+	display: none;
+}
+
+
+/* Education */
+
+.education {
+	background-color: #fff;
+}
+
+.education .wrapper {
+	display: flex;
+	flex-direction: column;
+}
+.education aside {
+	
+	margin: 0px 0px 0px;
+	padding:  0px 0px 10px;
+}
+
+.education aside + aside{
+	border-top: 1px solid #000;
+	padding-top: 30px;
+}
+
+.education aside:last-child{
+	padding-bottom: 0px;
+}
+
+
+.education aside:last-child,
+.education aside:last-child p {
+	margin-bottom: 0px;
+}
+
+
+
+/* Interests  */
+
+.interests .wrapper{
+	display: flex;
+	flex-direction: column;
+	margin: 0px auto;
+}
+
+.interests .wrapper .photo{
+	min-width: 45%;
+	min-height: 300px;
+	margin-top: 30px;
+
+}
+
+.interests .wrapper .photo img{
+	width: 100%;
+}
+
+.interests a{
+	color: black;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+.interests a:hover{
+	text-decoration: underline;
+}
+
+/* Footer */
+footer {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	text-align: center;
+	background-color: white;
+	box-sizing: border-box;
+	border-top: 2px solid black;
+}
+
+div.socialmedia {
+	padding: 14px 0px 10px;
+}
+
+div.socialmedia a{
+	display: inline-block;
+	height: 35px;
+}
+
+div.copyright {
+	width: 100%;
+	padding: 10px;
+	background-color: black;
+	color: white;
+}
+
+
+
+@media only screen and (min-width: 920px) {
+	
+	.toggle {
+		display: none;
+	}
+
+	nav {
+	  	display: block;
+	  	top: 0px;
+	  	padding: 0px;
+	  	border: none;
+	  	text-align: center;
+	}
+
+	
+	nav a {
+		padding: 0px 10px;
+		display: inline-block;
+		color: white;
+		font-size: 14px;
+		text-decoration: none;
+		line-height: 38px;
+		width: auto;
+	}
+
+	section  {
+		padding: 50px 20px;
+		
+	}
+
+	/* Intro  */
+
+	.intro .wrapper{
+		flex-direction: row;
+
+	}
+
+	.intro .wrapper .photo{
+		margin-left: 30px;
+		max-width: 45%;
+		margin-top: 0px;
+	}
+	
+
+	/* About Me */
+	.aboutme  .wrapper{
+		flex-direction: row;
+		
+	}
+
+	.me {
+		margin-right: 50px;
+	}
+
+	.aboutme aside{
+		min-width: 30%;
+		padding-top: 0px;
+	}
+
+
+	.interests .wrapper{
+		display: flex;
+		flex-direction: row;
+		margin: 0px auto;
+	}
+
+	.interests .photo{ 
+		margin-left: 30px;
+		max-width: 45%;
+	}
+
+}
+
+
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white !important;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+  text-decoration: none !important;
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
