@@ -3,8 +3,6 @@ import { globalStyles } from './global-styles.js';
 
 export class IntroComponent extends LitElement {
   static styles = [globalStyles, css`
-
-    /* Intro */
     .intro {
       background-color: #fff;
       min-height: 400px;
