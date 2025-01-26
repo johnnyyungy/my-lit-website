@@ -1,7 +1,8 @@
 import { LitElement, html, css } from 'https://cdn.jsdelivr.net/npm/lit@3.2.1/+esm';
+import { globalStyles } from './global-styles.js';
 
 export class WorkExperienceComponent extends LitElement {
-  static styles = css`
+  static styles = [globalStyles, css`
     :host {
       display: block;
       margin: 0 auto;
@@ -38,7 +39,7 @@ export class WorkExperienceComponent extends LitElement {
     .more_jobs.visible {
       display: block;
     }
-  `;
+  `];
 
   static properties = {
     showJobs: { type: Boolean },
