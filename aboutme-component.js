@@ -1,50 +1,11 @@
-import { LitElement, html, css } from 'https://cdn.jsdelivr.net/npm/lit@3.2.1/+esm';
-import { globalStyles } from './global-styles.js';
+import { LitElement, html } from 'https://cdn.jsdelivr.net/npm/lit@3.2.1/+esm';
 
 export class AboutMeComponent extends LitElement {
-  static styles = [globalStyles, css`
-    .aboutme {
-    scroll-margin-top: 100px; /* Add this line */
-      min-height: 400px;
-      display: flex;
-    }
-
-    .wrapper {
-      margin: 0 auto;
-      max-width: 1200px;
-      padding: 20px;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .me {
-      margin-right: 50px;
-    }
-
-    aside ul {
-      margin: 0px 0px 0px 20px;
-      padding: 0px;
-      line-height: 22px;
-    }
-
-    aside ul li {
-      margin: 0px 0px 10px 0px;
-    }
-
-    @media only screen and (min-width: 920px) {
-      .wrapper {
-        flex-direction: row;
-      }
-
-      .aboutme aside{
-		min-width: 30%;
-		padding-top: 0px;
-	}
-    }
-  `];
-
   render() {
     return html`
+      <!-- Link the external CSS file -->
+      <link rel="stylesheet" href="./aboutme-styles.css">
+
       <section class="aboutme" id="aboutme">
         <div class="wrapper">
           <div class="me">

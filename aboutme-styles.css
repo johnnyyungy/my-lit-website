@@ -1,0 +1,39 @@
+/* aboutme-styles.css */
+.aboutme {
+    scroll-margin-top: 100px;
+    min-height: 400px;
+    display: flex;
+  }
+  
+  .wrapper {
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .me {
+    margin-right: 50px;
+  }
+  
+  aside ul {
+    margin: 0px 0px 0px 20px;
+    padding: 0px;
+    line-height: 22px;
+  }
+  
+  aside ul li {
+    margin: 0px 0px 10px 0px;
+  }
+  
+  @media only screen and (min-width: 920px) {
+    .wrapper {
+      flex-direction: row;
+    }
+  
+    .aboutme aside {
+      min-width: 30%;
+      padding-top: 0px;
+    }
+  }
