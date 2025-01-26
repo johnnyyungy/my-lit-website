@@ -40,6 +40,11 @@ export class IntroComponent extends LitElement {
         margin-left: 30px;
         margin-top: 0;
       }
+
+      .intro .wrapper{
+		flex-direction: row;
+
+	}
     }
   `];
 
