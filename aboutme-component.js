@@ -1,7 +1,8 @@
 import { LitElement, html, css } from 'https://cdn.jsdelivr.net/npm/lit@3.2.1/+esm';
+import { globalStyles } from './global-styles.js';
 
 export class AboutMeComponent extends LitElement {
-  static styles = css`
+  static styles = [globalStyles, css`
     .aboutme {
       min-height: 400px;
       display: flex;
@@ -34,7 +35,7 @@ export class AboutMeComponent extends LitElement {
         flex-direction: row;
       }
     }
-  `;
+  `];
 
   render() {
     return html`
