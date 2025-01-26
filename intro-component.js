@@ -45,11 +45,11 @@ export class IntroComponent extends LitElement {
 
 
     @media only screen and (min-width: 920px) {
-      .photo {
-        margin-left: 30px;
-        margin-top: 0;
-        max-width: 45%
-      }
+      .intro .wrapper .photo{
+		margin-left: 30px;
+		max-width: 45%;
+		margin-top: 0px;
+	}
 
       .intro .wrapper{
 		flex-direction: row;
