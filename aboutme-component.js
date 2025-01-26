@@ -1,10 +1,14 @@
 import { LitElement, html, css } from 'https://cdn.jsdelivr.net/npm/lit@3.2.1/+esm';
 import { globalStyles } from './global-styles.js';
 
+// Import the master stylesheet
+import masterStyles from './styles.css' assert { type: 'css' };
+
 export class AboutMeComponent extends LitElement {
-  static styles = [globalStyles, css`
+  static styles = [globalStyles, masterStyles, css`
+    /* Component-specific styles */
     .aboutme {
-    scroll-margin-top: 100px; /* Add this line */
+      scroll-margin-top: 100px; /* Add this line */
       min-height: 400px;
       display: flex;
     }
@@ -36,10 +40,10 @@ export class AboutMeComponent extends LitElement {
         flex-direction: row;
       }
 
-      .aboutme aside{
-		min-width: 30%;
-		padding-top: 0px;
-	}
+      .aboutme aside {
+        min-width: 30%;
+        padding-top: 0px;
+      }
     }
   `];
 
