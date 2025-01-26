@@ -4,36 +4,40 @@ export class EducationComponent extends LitElement {
   static styles = css`
     :host {
       display: block;
-    }
-
-    .education {
       background-color: #fff;
-      padding: 20px; /* Add padding for better spacing */
+      padding: 40px 20px;
     }
 
-    .education .wrapper {
-      display: flex;
-      flex-direction: column;
-      gap: 20px; /* Add spacing between children */
+    .wrapper {
+      max-width: 1200px;
+      margin: 0 auto;
     }
 
-    .education aside {
-      margin: 0px 0px 0px;
-      padding: 0px 0px 10px;
+    aside {
+      margin: 0 0 30px;
+      padding: 0 0 20px;
     }
 
-    .education aside + aside {
+    aside + aside {
       border-top: 1px solid #000;
       padding-top: 30px;
     }
 
-    .education aside:last-child {
-      padding-bottom: 0px;
+    h3 {
+      font-size: 24px;
+      margin: 0 0 10px;
     }
 
-    .education aside:last-child,
-    .education aside:last-child p {
-      margin-bottom: 0px;
+    h4 {
+      font-size: 18px;
+      color: #555;
+      margin: 0 0 15px;
+    }
+
+    p {
+      font-size: 16px;
+      line-height: 1.6;
+      margin: 0;
     }
   `;
 

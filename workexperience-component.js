@@ -1,42 +1,20 @@
 import { LitElement, html, css } from 'https://cdn.jsdelivr.net/npm/lit@3.2.1/+esm';
 
 export class WorkExperienceComponent extends LitElement {
-    static styles = css`
+  static styles = css`
     :host {
       display: block;
       margin: 0 auto;
-      max-width: 800px;
+      max-width: 1200px;
       padding: 20px;
     }
-  
+
     .workexperience aside {
       border-bottom: 1px solid #000;
       margin: 0 0 30px;
       padding: 0 0 20px;
     }
-  
-    .workexperience h2 {
-      font-size: 32px;
-      margin-bottom: 20px;
-    }
-  
-    .workexperience h3 {
-      font-size: 24px;
-      margin: 0 0 10px;
-    }
-  
-    .workexperience h4 {
-      font-size: 18px;
-      color: #555;
-      margin: 0 0 15px;
-    }
-  
-    .workexperience p {
-      font-size: 16px;
-      line-height: 1.6;
-      margin: 0;
-    }
-  
+
     .more_button {
       padding: 10px 20px;
       background-color: #333;
@@ -48,37 +26,17 @@ export class WorkExperienceComponent extends LitElement {
       border-radius: 4px;
       transition: background-color 0.3s ease;
     }
-  
+
     .more_button:hover {
       background-color: #222;
     }
-  
+
     .more_jobs {
       display: none;
-      transition: opacity 0.3s ease;
     }
-  
+
     .more_jobs.visible {
       display: block;
-      opacity: 1;
-    }
-  
-    @media (max-width: 768px) {
-      .workexperience h2 {
-        font-size: 28px;
-      }
-  
-      .workexperience h3 {
-        font-size: 22px;
-      }
-  
-      .workexperience h4 {
-        font-size: 16px;
-      }
-  
-      .workexperience p {
-        font-size: 14px;
-      }
     }
   `;
 
@@ -93,16 +51,6 @@ export class WorkExperienceComponent extends LitElement {
 
   toggleJobs() {
     this.showJobs = !this.showJobs;
-    this.scrollToBottom();
-  }
-
-  scrollToBottom() {
-    if (this.showJobs) {
-      setTimeout(() => {
-        const moreJobsSection = this.shadowRoot.querySelector('.more_jobs');
-        moreJobsSection.scrollIntoView({ behavior: 'smooth' });
-      }, 100);
-    }
   }
 
   render() {

@@ -2,35 +2,22 @@ import { LitElement, html, css } from 'https://cdn.jsdelivr.net/npm/lit@3.2.1/+e
 
 export class IntroComponent extends LitElement {
   static styles = css`
-    :host {
-      display: block;
-    }
-
     .intro {
       background-color: #fff;
       min-height: 400px;
       display: flex;
     }
 
-    .intro .wrapper {
+    .wrapper {
+      margin: 0 auto;
+      max-width: 1200px;
+      padding: 20px;
+      display: flex;
       flex-direction: column;
     }
 
-    .intro .wrapper aside {
-      flex-grow: 1;
-    }
-
-    .intro .wrapper .photo {
-      background-size: cover;
-      margin-top: 30px;
-    }
-
-    .intro .wrapper .photo img {
+    .photo img {
       width: 100%;
-    }
-
-    .intro-social {
-      font-size: 18px;
     }
 
     .intro-social a {
@@ -42,19 +29,15 @@ export class IntroComponent extends LitElement {
       text-decoration: underline;
     }
 
-    .email {
-      background-color: #FFD817;
-      color: black;
-      display: inline-block;
-      padding: 10px;
-      text-decoration: none;
-      font-size: 18px;
-      margin-bottom: 30px;
-      font-weight: bold;
-    }
+    @media only screen and (min-width: 920px) {
+      .wrapper {
+        flex-direction: row;
+      }
 
-    .email:hover {
-      background-color: #FFDF43;
+      .photo {
+        margin-left: 30px;
+        max-width: 45%;
+      }
     }
   `;
 
@@ -72,7 +55,7 @@ export class IntroComponent extends LitElement {
               <a href="https://linkedin.com/in/john-yung-53930945" target="_blank">LinkedIn</a>
             </div>
           </aside>
-          <div class="photo"><img src="me.jpg" alt="John Yung"></div>
+          <div class="photo"><img src="assets/me.jpg" alt="John Yung"></div>
         </div>
       </section>
     `;

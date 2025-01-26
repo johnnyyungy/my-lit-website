@@ -2,45 +2,37 @@ import { LitElement, html, css } from 'https://cdn.jsdelivr.net/npm/lit@3.2.1/+e
 
 export class AboutMeComponent extends LitElement {
   static styles = css`
-    :host {
-      display: block;
-    }
-
     .aboutme {
       min-height: 400px;
       display: flex;
-      flex-direction: column; /* Ensure flex works as expected */
-      padding: 20px; /* Add padding for better spacing */
     }
 
-    .aboutme .wrapper {
+    .wrapper {
+      margin: 0 auto;
+      max-width: 1200px;
+      padding: 20px;
       display: flex;
-      flex-direction: column; /* Stack children vertically */
-      gap: 20px; /* Add spacing between children */
+      flex-direction: column;
     }
 
-    .aboutme aside {
-      padding-top: 30px;
+    .me {
+      margin-right: 50px;
     }
 
-    .aboutme aside ul {
+    aside ul {
       margin: 0px 0px 0px 20px;
       padding: 0px;
       line-height: 22px;
     }
 
-    .aboutme aside ul li {
+    aside ul li {
       margin: 0px 0px 10px 0px;
     }
 
-    /* Add styles for the "me" section */
-    .aboutme .me {
-      flex: 1; /* Allow this section to grow */
-    }
-
-    /* Add styles for the "aside" section */
-    .aboutme aside {
-      flex: 1; /* Allow this section to grow */
+    @media only screen and (min-width: 920px) {
+      .wrapper {
+        flex-direction: row;
+      }
     }
   `;
 
