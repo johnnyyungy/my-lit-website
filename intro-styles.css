@@ -1,66 +1,87 @@
-/* intro-styles.css */
 .intro {
-    scroll-margin-top: 100px; /* Add this line */
+    scroll-margin-top: 100px;
     background-color: #fff;
     min-height: 400px;
     display: flex;
-    padding: 40px 0; /* Add some vertical padding */
-  }
-  
-  .intro .wrapper .photo {
+    padding: 40px 0;
+}
+
+.intro .wrapper .photo {
     background-size: cover;
     margin-top: 30px;
-    border-radius: 10px; /* Add rounded corners to the photo */
-    overflow: hidden; /* Ensure the image respects the border radius */
-  }
-  
-  .intro .wrapper aside {
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.intro .wrapper aside {
     flex-grow: 1;
-  }
-  
-  .intro-social {
+}
+
+.intro-social {
     font-size: 18px;
-    margin-top: 20px; /* Add some space above the social links */
-  }
-  
-  .wrapper {
+    margin-top: 20px;
+}
+
+.wrapper {
     margin: 0 auto;
     max-width: 1200px;
     padding: 20px;
     display: flex;
     flex-direction: column;
-    align-items: center; /* Center content vertically */
-  }
-  
-  .photo img {
+    align-items: center;
+}
+
+.photo img {
     width: 100%;
-    display: block; /* Remove extra space below the image */
-  }
-  
-  .intro-social a {
+    display: block;
+}
+
+.intro-social a {
     text-decoration: none;
-    color: #000;
-    transition: color 0.3s ease; /* Smooth color transition on hover */
-  }
-  
-  .intro-social a:hover {
+    color: #333;
+    transition: color 0.3s ease;
+    font-weight: 600;
+}
+
+.intro-social a:hover {
     text-decoration: underline;
-    color: #4682b4; /* Change color on hover for better interactivity */
-  }
-  
-  @media only screen and (min-width: 920px) {
+    color: #ff6f61;
+}
+
+h1 {
+    font-size: 32px;
+    color: #333;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+h1::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: #ff6f61;
+    margin: 10px 0 0;
+    border-radius: 2px;
+}
+
+@media only screen and (min-width: 920px) {
     .intro .wrapper .photo {
-      margin-left: 30px;
-      max-width: 45%;
-      margin-top: 0px;
+        margin-left: 30px;
+        max-width: 45%;
+        margin-top: 0px;
     }
-  
+
     .intro .wrapper {
-      flex-direction: row;
-      align-items: flex-start; /* Align items to the top in desktop view */
+        flex-direction: row;
+        align-items: flex-start;
     }
-  
+
     .intro-social {
-      margin-top: 30px; /* Increase space above social links on desktop */
+        margin-top: 30px;
     }
-  }
+
+    h1 {
+        font-size: 40px;
+    }
+}

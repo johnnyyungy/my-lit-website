@@ -10,21 +10,21 @@ import './interests-component.js';
 import './footer-component.js';
 
 export class MyApp extends LitElement {
-  static styles = [globalStyles]; // Apply global styles
+  static styles = [globalStyles]; 
 
   constructor() {
     super();
-    // Add an event listener for the custom 'navigate' event
+    
     this.addEventListener('navigate', this.handleNavigate);
   }
 
-  // Handle the custom 'navigate' event
+  
   handleNavigate(event) {
-    const targetId = event.detail.targetId; // Get the target ID from the event
-    const targetElement = this.shadowRoot.getElementById(targetId); // Find the target element in the shadow DOM
+    const targetId = event.detail.targetId; 
+    const targetElement = this.shadowRoot.getElementById(targetId);
 
     if (targetElement) {
-      // Smoothly scroll to the target element
+      
       targetElement.scrollIntoView({ behavior: 'smooth' });
     } else {
       console.error(`Element with id "${targetId}" not found in shadow DOM.`);

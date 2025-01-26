@@ -56,7 +56,7 @@ div.wrapper {
 }
 
 section {
-    scroll-margin-top: 100px; /* Adjust this value based on the height of your header */
+    scroll-margin-top: 100px; 
 }
 
 /* Nav */

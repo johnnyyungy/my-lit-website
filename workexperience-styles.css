@@ -4,7 +4,7 @@
     margin: 0 auto;
     max-width: 1200px;
     padding: 20px;
-    font-family: 'Poppins', sans-serif; /* Fun, modern font */
+    font-family: 'Poppins', sans-serif; 
   }
   
   .workexperience {
@@ -12,39 +12,39 @@
   }
   
   .workexperience aside {
-    border-bottom: 2px solid #ff6f61; /* Fun coral color */
+    border-bottom: 2px solid #ff6f61; 
     margin: 0 0 30px;
     padding: 0 0 20px;
-    background-color: #f9f9f9; /* Light background for contrast */
-    border-radius: 10px; /* Rounded corners */
+    background-color: #f9f9f9; 
+    border-radius: 10px; 
     padding: 20px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
     transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
   
   .workexperience aside:hover {
-    transform: translateY(-5px); /* Lift effect on hover */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Stronger shadow on hover */
+    transform: translateY(-5px); 
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); 
   }
   
   .more_button {
     padding: 12px 24px;
-    background-color: #ff6f61; /* Fun coral color */
+    background-color: #ff6f61; 
     color: white;
     font-size: 16px;
     text-align: center;
     cursor: pointer;
     border: none;
-    border-radius: 25px; /* Rounded button */
+    border-radius: 25px; 
     transition: background-color 0.3s ease, transform 0.3s ease;
     margin-top: 20px;
     margin-bottom: 20px;
-    font-weight: 600; /* Bold text */
+    font-weight: 600; 
   }
   
   .more_button:hover {
-    background-color: #ff4a3d; /* Darker coral on hover */
-    transform: scale(1.05); /* Slight grow effect */
+    background-color: #ff4a3d; 
+    transform: scale(1.05); 
   }
   
   .more_jobs {
@@ -55,10 +55,10 @@
   }
   
   .more_jobs.visible {
-    max-height: 1000px; /* Adjust this value based on your content */
+    max-height: 1000px; 
   }
   
-  /* Add a fun gradient background to the section */
+  
   .workexperience {
     background: linear-gradient(135deg, #f9f9f9, #e0e0e0);
     padding: 30px;
@@ -66,7 +66,7 @@
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
   }
   
-  /* Add a fun heading style */
+  
   .workexperience h2 {
     font-size: 32px;
     color: #333;
